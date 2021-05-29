@@ -1,0 +1,225 @@
+
+//SIMPLE ARRAY SUM............( 1 )
+
+
+#include<iostream>
+#include<vector>
+#include<array>
+
+using namespace std;
+
+int main()
+{
+    int n,a,sum=0;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a;
+        sum+=a;
+    }
+    cout<<sum;
+}
+
+
+
+//COMPARE THE TRIPLET.............( 2 )
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    int alice=0,bob=0;
+    vector<int>arr1(3);
+    vector<int>arr2(3);
+    for(int i=0;i<3;i++){
+        cin>>arr1[i];
+    }
+    for(int i=0;i<3;i++){
+        cin>>arr2[i];
+    }
+    for(int i=0;i<3;i++){
+        if(arr1[i]>arr2[i]){
+               alice++;
+        }else if(arr1[i]<arr2[i]){
+            bob++;
+        }
+    }
+    cout<<alice<<" "<<bob;
+}
+
+//A VERY BIG SUM......................( 3 )
+
+
+long aVeryBigSum(vector<long> ar) {
+       long sum=0;
+       for(int i=0;i<ar.size();i++){
+           sum+=ar[i];
+       }
+       return sum;
+}
+
+
+
+//diagonal difference..................( 4 )
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,sum1=0,sum2=0;
+    int strike=1,total=0;
+    cin>>n;
+    int arr[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>arr[i][j];
+        }
+    }
+    for(int i=0;i<n;i++){
+        sum1+=arr[i][i];
+        sum2+=arr[i][n-strike];
+        strike++;
+    }
+    if(sum1>sum2){
+        total=sum1-sum2;
+    }else if(sum1<sum2){
+        total=sum2-sum1;
+    }else {
+        total=sum1-sum2;
+    }
+    cout<<total;
+}
+
+
+//PLUS MINUS........................( 5 )
+
+
+#include<bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    
+    float n,p, neg_sum=0,pos_sum=0,zeroes=0;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>p;
+        if(p>0){
+            pos_sum++;
+        }else if(p<0){
+            neg_sum++;
+        }else {
+            zeroes++;
+        }
+    }
+    cout<<pos_sum/n<<"\n"<<neg_sum/n<<"\n"<<zeroes/n;
+
+
+}
+
+//STAIRCASE.......................( 6 )
+
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,p=1;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=1;j<=n;j++){
+            if(j>n-p){
+                cout<<"#";
+            }else {
+                cout<<" ";
+            } 
+        }
+        cout<<endl;
+        p++;
+    }
+}
+
+
+//MIN-MAX SUM........................( 7 )
+
+
+
+void miniMaxSum(vector<int> arr) {
+    long min=0,max=0;
+   sort(arr.begin(),arr.end());
+   for(int i=1;i<5;i++){
+       max+=arr[i];
+   }
+   for(int i=0;i<4;i++){
+       min+=arr[i];
+   }
+   cout<<min<<" "<<max;
+   
+}
+
+
+//BIRTHDAY CAKE CANDLES.................( 8 )
+
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int n,sum=1;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    sort(arr.begin(),arr.end());
+    for(int i=0;i<n-1;i++){
+        if(arr[i]==arr[n-1]){
+            sum++;
+        }
+    }
+    cout<<sum;
+    
+}
+
+
+//APPLES AND ORANGES................( 9 )
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long s,t,a,b,m,n,apple=0,orange=0,input;
+    cin>>s>>t>>a>>b>>m>>n;
+    for(int i=0;i<m;i++){
+        cin>>input;
+        if(input>=s-a&&input<=t-a){
+            apple++;
+        }
+    }
+    for(int i=0;i<n;i++){
+        cin>>input;
+        if(input<=-(b-t)&&input>=-(b-s)){
+            orange++;
+        }
+    }
+    cout<<apple<<endl<<orange;
+    
+}
+
+
